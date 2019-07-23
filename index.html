@@ -11,7 +11,46 @@
 <script src="https://unpkg.com/docute@4/dist/docute.js"></script>
 <script>
     new Docute({
-        target: '#docute'
+        target: '#docute',
+        sourcePath: 'docs/',
+        darkThemeToggler: true,
+        layout: 'narrow',
+        nav: [
+            {
+                title: 'Home',
+                link: '/'
+            },
+            {
+                title: 'Github',
+                link: 'https://github.com/Snapstromegon/TH-SS19-WD-Projekt/'
+            }
+        ],
+        sidebar: [
+            {
+                title: 'Projekt',
+                collapsable: false,
+                children: [
+                    {
+                        title: 'Startseite',
+                        link: '/'
+                    },
+                    {
+                        title: 'Expose',
+                        link: '/project/expose.md'
+                    }
+                ]
+            },
+            {
+                title: 'Offline First',
+                collapsable: false,
+                children: [
+                    {
+                        title: 'Konzept',
+                        link: '/'
+                    }
+                ]
+            }
+        ]
     })
 </script>
 </body>

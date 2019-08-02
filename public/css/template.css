@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+#image-gallery {
+  display: flex;
+  flex-wrap: wrap; }
+
+#image-gallery-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  #image-gallery-items .image-gallery-item {
+    width: 50vw;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px; }
+    #image-gallery-items .image-gallery-item img {
+      height: 100%;
+      width: auto;
+      cursor: pointer; }

@@ -1,0 +1,32 @@
+#gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 1vw;
+  margin-bottom: 56px;
+
+  .gallery-item {
+    margin-bottom: 1vw;
+    width: 49.5%;
+    height: 200px;
+
+    .gallery-item-image {
+      height: 200px;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      display: flex;
+      align-items: center;
+
+      .gallery-item-image-title {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 5px;
+        display: inline-block;
+        color: #ffffff;
+        font-size: 1em;
+        text-align: center;
+      }
+    }
+  }
+}

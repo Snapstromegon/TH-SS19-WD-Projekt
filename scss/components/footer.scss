@@ -1,0 +1,17 @@
+footer {
+  @extend header;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  .footer-item {
+    font-size: 1em;
+    padding: 0 30px;
+    color: #ffffff;
+
+    &.footer-item-link {
+      cursor: pointer;
+    }
+  }
+}

@@ -6,6 +6,8 @@
   justify-content: space-between;
   padding: 1vw;
   margin-bottom: 56px;
+  flex-shrink: 1;
+  overflow: auto;
 
   .gallery-item {
     margin-bottom: 1vw;

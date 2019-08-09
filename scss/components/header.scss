@@ -4,6 +4,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-shrink: 0;
 
   .header-item {
     padding: 0 16px;

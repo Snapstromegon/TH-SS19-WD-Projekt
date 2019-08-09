@@ -4,6 +4,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  flex-shrink: 0;
 
   .footer-item {
     font-size: 1em;

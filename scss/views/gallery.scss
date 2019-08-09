@@ -2,8 +2,9 @@
   margin: 0;
   padding: 4px;
   box-sizing: border-box;
+  margin-bottom: 56px;
   width: 100%;
-  
+
   display: grid;
   grid-template-columns: repeat(2, calc(50% - 2px));
   grid-template-rows: repeat(5, 200px);

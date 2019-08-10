@@ -22,7 +22,7 @@ header {
 }
 
 @media only screen and (min-width: 860px) {
-  header {
+  #top-bar {
     padding: 0 calc((100vw - 860px) / 2);
   }
 }

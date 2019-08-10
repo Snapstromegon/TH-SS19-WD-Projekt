@@ -38,3 +38,26 @@
 
   }
 }
+
+@media only screen and (min-width: 860px) {
+  #details {
+    margin: 0 auto;
+    max-width: 860px;
+
+    display: flex;
+    align-items: flex-start;
+
+    .image, .image-informations {
+      width: 50%;
+    }
+
+    .image {
+      margin: 21.4333px 0;
+
+      img {
+        width: 90%;
+        height: auto;
+      }
+    }
+  }
+}

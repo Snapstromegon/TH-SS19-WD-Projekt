@@ -7,15 +7,23 @@ header {
   flex-shrink: 0;
 
   .header-item {
-    padding: 0 16px;
-    font-weight: normal;
-    font-size: 1.2em;
-    color: #ffffff;
+
+    h1 {
+      padding: 0 16px;
+      font-weight: normal;
+      color: #ffffff;
+      font-size: 1.2em;
+    }
 
     &.header-icon-link {
+      padding: 0 16px;
+      font-weight: normal;
+      color: #ffffff;
+      font-size: 1.2em;
       display: flex;
       align-items: center;
-      cursor: pointer;
+      border: 0px;
+      text-decoration: none;
     }
   }
 

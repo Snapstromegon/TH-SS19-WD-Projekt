@@ -17,3 +17,19 @@
     }
   }
 }
+
+
+@media only screen and (min-width: 860px) {
+  #full {
+    .image {
+      img {
+        height: auto;
+        width: auto;
+        object-fit: contain;
+        min-width: 411px;
+        max-height: 90%;
+        max-width: 90%;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import 'fonts/roboto';
+@import 'fonts/material';
+
+@import 'views/gallery';
+@import 'views/details';
+@import 'views/full';
+
+@import 'components/header';
+@import 'components/main';
+@import 'components/footer';
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  background-color: #282828;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  height: calc(100vh - 56px);
+}
+
+a:hover {
+  cursor: pointer;
+}

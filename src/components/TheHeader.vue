@@ -2,7 +2,7 @@
 
     <header id="top-bar">
 
-        <a v-if="showNavigateBack" href="#" class="header-item header-icon-link">
+        <a v-if="displayNavigateBackIcon" href="#" class="header-item header-icon-link">
             <i class="material-icons">keyboard_arrow_left</i>
         </a>
 
@@ -20,6 +20,12 @@
         computed: {
             showNavigateBack() {
                 return ! this.$route.path.match(/\/gallery\/[0-9]*/);
+            }
+        },
+        props: {
+            displayNavigateBackIcon: {
+                type: Boolean,
+                default: false
             }
         }
     }

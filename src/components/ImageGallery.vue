@@ -19,8 +19,8 @@
         },
         props: {
             images: {
-                type: Object,
-                default: () => ({})
+                type: Array,
+                default: () => ([])
             },
             currentPage: {
                 type: Number,
@@ -33,9 +33,8 @@
         },
         computed: {
             visibleImages() {
-                const imagesArray = Object.getOwnPropertyNames(this.images).map(key => { return this.images[key]; });
                 const firstElement = Math.abs((this.currentPage - 1) * this.imagesPerPage);
-                return imagesArray.slice(firstElement, firstElement + this.imagesPerPage);
+                return this.images.slice(firstElement, firstElement + this.imagesPerPage);
             }
         }
     }

@@ -2,7 +2,7 @@
 
     <div class="gallery-item">
 
-        <img :src="image.previewImg" alt="">
+        <img :src="image.previewImg" @click="openDetailView" alt="">
 
         <p>"{{image.Title.de}}"</p>
 
@@ -17,6 +17,11 @@
             image: {
                 type: Object,
                 default: {}
+            }
+        },
+        methods: {
+            openDetailView() {
+                this.$router.push(`/details/${this.image.Oid}`);
             }
         }
     }

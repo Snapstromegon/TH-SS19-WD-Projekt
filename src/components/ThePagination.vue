@@ -9,7 +9,7 @@
         </a>
 
         <div class="footer-item">
-            {{currentPage}} / {{lastPage}}
+            {{currentPage}} / {{numberOfPages}}
         </div>
 
         <a @click="goToNextPage" class="footer-item footer-item-link">
@@ -32,7 +32,7 @@
                 type: Number,
                 default: 16
             },
-            numberOfImages: {
+            numberOfPages: {
                 type: Number,
                 default: 0
             }
@@ -44,7 +44,7 @@
         },
         methods: {
             goToNextPage() {
-                if (this.currentPage < this.lastPage) this.$emit('next');
+                if (this.currentPage < this.numberOfPages) this.$emit('next');
             },
             goToLastPage() {
                 if (this.currentPage > 1) this.$emit('last');

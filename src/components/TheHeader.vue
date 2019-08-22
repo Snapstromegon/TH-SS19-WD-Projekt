@@ -2,7 +2,7 @@
 
     <header id="top-bar">
 
-        <a v-if="displayNavigateBackIcon" href="#" class="header-item header-icon-link">
+        <a v-if="displayNavigateBackIcon" @click="lastPage" class="header-item header-icon-link">
             <i class="material-icons">keyboard_arrow_left</i>
         </a>
 
@@ -26,6 +26,11 @@
             displayNavigateBackIcon: {
                 type: Boolean,
                 default: false
+            }
+        },
+        methods: {
+            lastPage() {
+                this.$router.back();
             }
         }
     }

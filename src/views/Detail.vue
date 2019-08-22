@@ -8,7 +8,7 @@
 
             <div class="image">
 
-                <img :src="image.previewImg" alt="">
+                <img :src="image.previewImg" :alt="image.Title.de" @dblclick="openFullSizeView">
 
             </div>
 
@@ -40,7 +40,6 @@
 <script>
 
     import TheHeader from '@/components/TheHeader.vue';
-    import ImageGallery from '@/components/ImageGallery.vue';
     import ThePagination from '@/components/ThePagination.vue';
     import DetailTab from '@/components/DetailTab.vue';
 
@@ -48,7 +47,6 @@
         name: "Detail",
         components: {
             TheHeader,
-            ImageGallery,
             ThePagination,
             DetailTab
         },
@@ -79,6 +77,10 @@
             changeToNextPage() {
                 const nextImageId = this.galleryImages[this.currentPageNumber].Oid;
                 this.$router.push(`/details/${nextImageId}`);
+            },
+
+            openFullSizeView() {
+                this.$router.push(`/full/${this.image.Oid}`);
             }
         },
         watch: {

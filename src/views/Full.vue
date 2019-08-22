@@ -2,7 +2,7 @@
 
     <div id="app-container">
 
-        <TheHeader display-navigate-back-icon="true"/>
+        <TheHeader :display-navigate-back-icon="true"/>
 
         <main id="full">
 

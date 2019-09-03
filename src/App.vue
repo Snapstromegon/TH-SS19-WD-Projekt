@@ -12,9 +12,9 @@
     }),
     components: {
     },
-    created() {
+    async created() {
 
-      const xhr = new XMLHttpRequest();
+      /* const xhr = new XMLHttpRequest();
       xhr.open('GET', '/images.json');
       xhr.addEventListener('load', response => {
         const imagesObject = JSON.parse(xhr.response);
@@ -22,7 +22,15 @@
         this.galleryImages = imagesArray;
         console.log(imagesArray);
       });
-      xhr.send();
+      xhr.send(); */
+
+      const request = new Request('/images.json');
+
+      const response = await fetch(request);
+
+      const imagesObject = await response.json();
+
+      this.galleryImages = Object.getOwnPropertyNames( imagesObject ).map(key => { return imagesObject[key]; });
 
     }
   }

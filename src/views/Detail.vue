@@ -2,7 +2,7 @@
 
     <div id="app-container">
 
-        <TheHeader :display-navigate-back-icon="true"/>
+        <TheHeader :display-navigate-back-icon="true" :gallery-page="imagePageNumber" />
 
         <main id="details">
 
@@ -62,6 +62,11 @@
         computed: {
             image() {
                 return this.galleryImages.find(image => image.Oid === this.currentImageId);
+            },
+
+            imagePageNumber() {
+                const index = this.galleryImages.findIndex(image => image.Oid === this.currentImageId) + 1;
+                return Math.ceil(index / 16);
             },
 
             currentPageNumber() {

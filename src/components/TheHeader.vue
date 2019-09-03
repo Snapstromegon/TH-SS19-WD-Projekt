@@ -26,11 +26,20 @@
             displayNavigateBackIcon: {
                 type: Boolean,
                 default: false
+            },
+            galleryPage: {
+                type: Number,
+                default: 1
             }
         },
         methods: {
             lastPage() {
-                this.$router.back();
+                if (this.$route.path.match(/\/details\/[0-9]*/) !== null) {
+                    this.$router.push(`/gallery/${this.galleryPage}`);
+                }
+                if (this.$route.path.match(/\/full\/[0-9]*/) !== null) {
+                    this.$router.push(`/details/${this.$route.params.id}`);
+                }
             }
         }
     }

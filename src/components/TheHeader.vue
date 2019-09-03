@@ -34,10 +34,10 @@
         },
         methods: {
             lastPage() {
-                if (this.$route.path.match(/\/details\/[0-9]*/) !== null) {
+                if (this.$route.path.includes('details')) {
                     this.$router.push(`/gallery/${this.galleryPage}`);
                 }
-                if (this.$route.path.match(/\/full\/[0-9]*/) !== null) {
+                if (this.$route.path.includes('full')) {
                     this.$router.push(`/details/${this.$route.params.id}`);
                 }
             }

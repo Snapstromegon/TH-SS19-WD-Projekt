@@ -8,7 +8,7 @@
 
             <div class="image">
 
-                <img :src="image.previewImg" :alt="image.Title.de" @dblclick="openFullSizeView">
+                <img :src="image.previewImg" :alt="image.Title.de" @click="openFullSizeView">
 
             </div>
 

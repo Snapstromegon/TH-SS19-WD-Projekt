@@ -3,6 +3,7 @@
     <div @click="openDetailView" class="gallery-item">
 
         <img :src="image.previewImg" alt="">
+        <img :src="image.imgSrc" alt="">
 
         <p>"{{image.Title.de}}"</p>
 

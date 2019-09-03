@@ -1,8 +1,8 @@
 <template>
 
-    <div class="gallery-item">
+    <div @click="openDetailView" class="gallery-item">
 
-        <img :src="image.previewImg" @click="openDetailView" alt="">
+        <img :src="image.previewImg" alt="">
 
         <p>"{{image.Title.de}}"</p>
 

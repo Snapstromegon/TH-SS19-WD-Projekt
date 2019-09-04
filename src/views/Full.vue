@@ -2,7 +2,7 @@
 
     <div id="app-container">
 
-        <TheHeader :display-navigate-back-icon="true"/>
+        <TheHeader :display-navigate-back-icon="true" :next-level-route="nextLevelRoute"/>
 
         <main id="full">
 
@@ -37,9 +37,15 @@
             currentImageId: null
         }),
         computed: {
+
+            nextLevelRoute() {
+                return `/details/${this.currentImageId}`;
+            },
+
             image() {
                 return this.galleryImages.find(image => image.Oid === this.currentImageId);
             }
+
         },
         watch: {
             $route() {

@@ -2,7 +2,7 @@
 
     <header id="top-bar">
 
-        <a v-if="displayNavigateBackIcon" @click="lastPage" class="header-item header-icon-link">
+        <a v-if="displayNavigateBackIcon" @click="nextViewLevel" class="header-item header-icon-link">
             <i class="material-icons">keyboard_arrow_left</i>
         </a>
 
@@ -27,19 +27,14 @@
                 type: Boolean,
                 default: false
             },
-            galleryPage: {
-                type: Number,
-                default: 1
+            nextLevelRoute: {
+                type: String,
+                default: '/gallery/1'
             }
         },
         methods: {
-            lastPage() {
-                if (this.$route.path.includes('details')) {
-                    this.$router.push(`/gallery/${this.galleryPage}`);
-                }
-                if (this.$route.path.includes('full')) {
-                    this.$router.push(`/details/${this.$route.params.id}`);
-                }
+            nextViewLevel() {
+                this.$router.push(this.nextLevelRoute);
             }
         }
     }

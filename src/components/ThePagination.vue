@@ -4,7 +4,7 @@
 
         <!-- TODO: a href=# -->
 
-        <a @click="goToLastPage" class="footer-item footer-item-link">
+        <a @click="goToLastPage" class="footer-item footer-item-link" :class="{disabled: currentPage === 1}">
             <i class="material-icons">keyboard_arrow_left</i>
         </a>
 
@@ -12,7 +12,7 @@
             {{currentPage}} / {{numberOfPages}}
         </div>
 
-        <a @click="goToNextPage" class="footer-item footer-item-link">
+        <a @click="goToNextPage" class="footer-item footer-item-link" :class="{disabled: currentPage === numberOfPages}">
             <i class="material-icons">keyboard_arrow_right</i>
         </a>
 
@@ -52,3 +52,14 @@
         }
     }
 </script>
+
+<style lang="scss">
+
+    .footer-item-link {
+        &.disabled {
+            color: #cccccc;
+            cursor: default;
+        }
+    }
+
+</style>

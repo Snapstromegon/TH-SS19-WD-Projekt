@@ -5,7 +5,7 @@
         <img :src="image.previewImg" alt="">
         <img :src="image.imgSrc" alt="">
 
-        <p>"{{image.Title.de}}"</p>
+        <p>"{{imageTitle}}"</p>
 
     </div>
     
@@ -19,6 +19,16 @@
                 type: Object,
                 default: {}
             }
+        },
+        computed: {
+
+          imageTitle() {
+              if (this.image.Title.de.length < 50)
+                  return this.image.Title.de;
+
+              return this.image.Title.de.substr(0, 50) + '...';
+          }
+
         },
         methods: {
             openDetailView() {

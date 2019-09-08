@@ -9,6 +9,7 @@
             <div class="image">
 
                 <img :src="image.previewImg" :alt="image.Title.de" @click="openFullSizeView">
+                <img :src="image.imgSrc" :alt="image.Title.de" @click="openFullSizeView">
 
             </div>
 

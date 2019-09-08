@@ -8,7 +8,7 @@
 
             <div class="image">
 
-                <img :src="image.imgSrc" alt="">
+                <img :src="image.imgSrc" :alt="image.Title.de">
 
             </div>
 

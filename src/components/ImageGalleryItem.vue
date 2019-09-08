@@ -2,8 +2,8 @@
 
     <div @click="openDetailView" class="gallery-item">
 
-        <img :src="image.previewImg" alt="">
-        <img :src="image.imgSrc" alt="">
+        <img :src="image.previewImg" :alt="image.Title.de">
+        <img :src="image.imgSrc" :alt="image.Title.de">
 
         <p>"{{imageTitle}}"</p>
 

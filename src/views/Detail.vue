@@ -2,13 +2,14 @@
 
     <div id="app-container">
 
-        <TheHeader :display-navigate-back-icon="true" :gallery-page="imagePageNumber" />
+        <TheHeader :display-navigate-back-icon="true" :next-level-route="nextLevelRoute" />
 
         <main id="details">
 
             <div class="image">
 
-                <img :src="image.previewImg" :alt="image.Title.de" @click="openFullSizeView">
+                <img v-if="hideHighQuality === true" :src="image.previewImg" :alt="image.Title.de" @click="openFullSizeView">
+                <img @error="cantLoadHighQuality" v-if="hideHighQuality === false" :src="image.imgSrc" :alt="image.Title.de" @click="openFullSizeView">
 
             </div>
 
@@ -57,16 +58,18 @@
             }
         },
         data: () => ({
-            currentImageId: null
+            currentImageId: null,
+            hideHighQuality: false
         }),
         computed: {
             image() {
                 return this.galleryImages.find(image => image.Oid === this.currentImageId);
             },
 
-            imagePageNumber() {
+            nextLevelRoute() {
                 const index = this.galleryImages.findIndex(image => image.Oid === this.currentImageId) + 1;
-                return Math.ceil(index / 16);
+                const pageNumber = Math.ceil(index / 16);
+                return `/gallery/${pageNumber}`;
             },
 
             currentPageNumber() {
@@ -86,6 +89,11 @@
 
             openFullSizeView() {
                 this.$router.push(`/full/${this.image.Oid}`);
+            },
+
+            cantLoadHighQuality() {
+                // if can't load high quality image from official cda hide this image tag
+                this.hideHighQuality = true;
             }
         },
         watch: {

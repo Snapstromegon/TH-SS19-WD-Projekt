@@ -3,7 +3,7 @@
     <div @click="openDetailView" class="gallery-item">
 
         <img :src="image.previewImg" :alt="image.Title.de">
-        <img :src="image.imgSrc" :alt="image.Title.de">
+        <img @error="cantLoadHighQuality" v-if="hideHighQuality === false" :src="image.imgSrc" :alt="image.Title.de">
 
         <p>"{{imageTitle}}"</p>
 
@@ -14,6 +14,9 @@
 <script>
     export default {
         name: "ImageGalleryItem",
+        data: () => ({
+            hideHighQuality: false
+        }),
         props: {
             image: {
                 type: Object,
@@ -33,6 +36,11 @@
         methods: {
             openDetailView() {
                 this.$router.push(`/details/${this.image.Oid}`);
+            },
+
+            cantLoadHighQuality() {
+                // if can't load high quality image from official cda hide this image tag
+                this.hideHighQuality = true;
             }
         }
     }

@@ -8,8 +8,8 @@
 
             <div class="image">
 
-                <img :src="image.previewImg" :alt="image.Title.de" @click="openFullSizeView">
-                <img :src="image.imgSrc" :alt="image.Title.de" @click="openFullSizeView">
+                <img v-if="hideHighQuality === true" :src="image.previewImg" :alt="image.Title.de" @click="openFullSizeView">
+                <img @error="cantLoadHighQuality" v-if="hideHighQuality === false" :src="image.imgSrc" :alt="image.Title.de" @click="openFullSizeView">
 
             </div>
 
@@ -58,7 +58,8 @@
             }
         },
         data: () => ({
-            currentImageId: null
+            currentImageId: null,
+            hideHighQuality: false
         }),
         computed: {
             image() {
@@ -88,6 +89,11 @@
 
             openFullSizeView() {
                 this.$router.push(`/full/${this.image.Oid}`);
+            },
+
+            cantLoadHighQuality() {
+                // if can't load high quality image from official cda hide this image tag
+                this.hideHighQuality = true;
             }
         },
         watch: {

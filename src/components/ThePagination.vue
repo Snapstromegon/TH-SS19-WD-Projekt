@@ -17,7 +17,7 @@
         </a>
 
     </footer>
-    
+
 </template>
 
 <script>
@@ -57,7 +57,7 @@
 
     .footer-item-link {
         &.disabled {
-            color: #cccccc;
+            color: #888888;
             cursor: default;
         }
     }

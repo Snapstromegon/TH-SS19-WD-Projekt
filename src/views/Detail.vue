@@ -8,7 +8,7 @@
 
             <div class="image">
 
-                <img v-if="hideHighQuality === true" :src="image.previewImg" :alt="image.Title.de" @click="openFullSizeView">
+                <img :src="image.previewImg" :alt="image.Title.de" @click="openFullSizeView">
                 <img @error="cantLoadHighQuality" v-if="hideHighQuality === false" :src="image.imgSrc" :alt="image.Title.de" @click="openFullSizeView">
 
             </div>

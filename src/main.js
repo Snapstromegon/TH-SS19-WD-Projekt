@@ -18,3 +18,7 @@ if ('serviceWorker' in navigator) {
     console.log('Registrierung fehlgeschlagen mit ' + error);
   });
 };
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  e.prompt();
+});

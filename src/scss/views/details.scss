@@ -1,9 +1,21 @@
 #details {
+  
+
+  .image {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      height: auto;
+      grid-column: 1;
+      grid-row-start: 1;
+    }
+  }
 
   .image {
     background-color: #000000;
-    display: flex;
-    justify-content: center;
 
     img {
       height: 256px;
@@ -50,19 +62,6 @@
 
     .image, .image-informations {
       width: 50%;
-    }
-
-    .image {
-      margin: 21.4333px 0;
-      display: grid;
-      grid-template-columns: 1fr;
-
-      img {
-        width: 100%;
-        height: auto;
-        grid-column: 1;
-        grid-row-start: 1;
-      }
     }
   }
 }
